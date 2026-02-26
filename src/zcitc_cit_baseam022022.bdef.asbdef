@@ -1,0 +1,20 @@
+projection implementation in class ZCITBP_C_CIT_BASEAM022022 unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZCITC_CIT_BASEAM022022 alias ZcitcCitBaseam022022
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+}

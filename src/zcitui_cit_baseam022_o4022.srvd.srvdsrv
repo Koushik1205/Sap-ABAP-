@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZCITC_CIT_BASEAM022022'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZCITC_CIT_BASEAM022022'
+  }
+}
+define service ZCITUI_CIT_BASEAM022_O4022 provider contracts odata_v4_ui {
+  expose ZCITC_CIT_BASEAM022022;
+}

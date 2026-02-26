@@ -1,0 +1,54 @@
+managed implementation in class ZCITBP_R_CIT_BASEAM022022 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZCITR_CIT_BASEAM022022 alias ZcitrCitBaseam022022
+persistent table ZCIT_BASEAM022
+extensible
+draft table ZCITCT_BSM0_D022
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   SalesID;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   SalesID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCIT_BASEAM022 corresponding extensible
+  {
+    SalesID = SALES_ID;
+    CustomerID = CUSTOMER_ID;
+    SalesOrg = SALES_ORG;
+    DistrChannel = DISTR_CHANNEL;
+    Division = DIVISION;
+    DocDate = DOC_DATE;
+    Currency = CURRENCY;
+    Status = STATUS;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+}
